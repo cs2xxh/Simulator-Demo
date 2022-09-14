@@ -114,7 +114,7 @@ if __name__ == '__main__':
     
 
 
-    a = input("input:请输入结束")
+    a = input("input:")
 
     for msg in msgs:
         msg = re.sub(r'\*.*','',msg)
@@ -132,7 +132,7 @@ if __name__ == '__main__':
         if m != None:
             m = re.search(r'S6F11:',msg)
             end = m.end(0)
-            msg = "S6F11 W"+msg[end:-1]+'>.'
+            msg = "S6F11 W"+msg[end:]+'.'
             try:
                 passive.send_sml(msg)
             except Exception as e :
@@ -141,4 +141,5 @@ if __name__ == '__main__':
             
             print(msg)
 
+    a = input("input:请输入结束")
     
